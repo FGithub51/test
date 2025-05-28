@@ -67,11 +67,14 @@ nav{
 .btn{
     padding: 1rem 2rem;
     font-size: 1rem;
-    color: #fff;
     background-color: #1d4ed8;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.btn .a {
+    color: #fff;
 }
 
 .btn:hover{
