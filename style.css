@@ -73,7 +73,7 @@ nav{
     transition: all 0.3s ease;
 }
 
-a {
+.nav .btn a {
     color: #fff;
 }
 
