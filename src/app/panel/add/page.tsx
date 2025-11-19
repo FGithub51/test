@@ -81,7 +81,7 @@ export default function AddProject() {
             .upload(filePath, file);
 
         if (uploadError) {
-            throw uploadError;
+            throw new Error(`Upload Failed: ${uploadError.message}`);
         }
 
         const { data } = supabase.storage.from('projects').getPublicUrl(filePath);
@@ -112,10 +112,11 @@ export default function AddProject() {
             if (error) throw error;
             router.push('/panel');
         } catch (error) {
-        } catch (error) {
             console.error('Error adding project:', error);
             const err = error as any;
-            alert(`Failed to add project: ${err.message || 'Unknown error'}\nDetails: ${JSON.stringify(err, null, 2)}`);
+            const isUploadError = err.message?.includes('Upload Failed');
+            const prefix = isUploadError ? 'Upload Failed' : 'Database Insert Failed';
+            alert(`${prefix}: ${err.message || 'Unknown error'}\nDetails: ${JSON.stringify(err, null, 2)}`);
         } finally {
             setLoading(false);
         }
