@@ -13,23 +13,23 @@ export default function Navbar() {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             <Link href="/" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                Home
+                                Beranda
                             </Link>
-                            <Link href="#services" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                Services
+                            <Link href="/services" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Layanan
                             </Link>
-                            <Link href="#about" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                About
+                            <Link href="/projects" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Proyek
                             </Link>
-                            <Link href="#contact" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                Contact
+                            <Link href="/about" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Tentang Kami
                             </Link>
                         </div>
                     </div>
                     <div className="md:hidden">
-                        {/* Mobile menu button placeholder - can be expanded later */}
+                        {/* Mobile menu button placeholder */}
                         <button className="text-gray-700 hover:text-primary p-2">
-                            <span className="sr-only">Open menu</span>
+                            <span className="sr-only">Buka menu</span>
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>

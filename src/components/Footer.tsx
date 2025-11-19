@@ -2,34 +2,39 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer id="contact" className="bg-slate-900 text-white py-12">
+        <footer className="bg-slate-900 text-white py-12">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Company Info */}
                     <div>
                         <h3 className="text-2xl font-bold mb-4">WaterProof Pro</h3>
                         <p className="text-gray-400">
-                            Professional waterproofing solutions for your home and business. Quality you can trust.
+                            Solusi waterproofing profesional untuk rumah dan bisnis Anda. Kualitas yang dapat Anda percaya.
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+                        <h4 className="text-lg font-semibold mb-4">Tautan Cepat</h4>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-                                    Home
+                                    Beranda
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#services" className="text-gray-400 hover:text-white transition-colors">
-                                    Services
+                                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
+                                    Layanan
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#about" className="text-gray-400 hover:text-white transition-colors">
-                                    About Us
+                                <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
+                                    Proyek
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+                                    Tentang Kami
                                 </Link>
                             </li>
                         </ul>
@@ -37,7 +42,7 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+                        <h4 className="text-lg font-semibold mb-4">Hubungi Kami</h4>
                         <div className="space-y-4">
                             <p className="flex items-center text-gray-400">
                                 <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +63,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} WaterProof Pro. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} WaterProof Pro. Hak Cipta Dilindungi.</p>
                 </div>
             </div>
         </footer>
