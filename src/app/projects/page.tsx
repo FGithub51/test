@@ -1,7 +1,18 @@
+"use client";
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabase';
+
+interface Project {
+    id?: number;
+    title: string;
+    description: string;
+    image: string;
+}
 
 export default function ProjectsPage() {
-    const projects = [
+    const [projects, setProjects] = useState<Project[]>([
         {
             title: "Waterproofing Atap Datar",
             description: "Proyek waterproofing atap gedung perkantoran menggunakan membran bakar.",
@@ -42,7 +53,33 @@ export default function ProjectsPage() {
             description: "Aplikasi lapisan pelindung pada eksterior gedung untuk ketahanan terhadap cuaca ekstrem.",
             image: "/images/project_coating_1763584995338.png",
         },
-    ];
+    ]);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('projects')
+                    .select('*')
+                    .order('id', { ascending: false });
+
+                if (data) {
+                    // Map Supabase data to match Project interface
+                    const dbProjects = data.map(p => ({
+                        id: p.id,
+                        title: p.title,
+                        description: p.description,
+                        image: p.image_url // Map image_url to image
+                    }));
+                    setProjects(prev => [...dbProjects, ...prev]);
+                }
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+        };
+
+        fetchProjects();
+    }, []);
 
     return (
         <div className="min-h-screen pt-20 pb-10 bg-gray-50">
