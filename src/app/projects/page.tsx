@@ -17,6 +17,31 @@ export default function ProjectsPage() {
             description: "Aplikasi lapisan kedap air pada kolam renang sebelum pemasangan keramik.",
             image: "/images/project-pool.png",
         },
+        {
+            title: "Waterproofing Balkon Apartemen",
+            description: "Pelapisan anti bocor pada area balkon untuk mencegah rembesan ke lantai bawah.",
+            image: "/images/project_balcony_1763584963361.png",
+        },
+        {
+            title: "Waterproofing Kamar Mandi",
+            description: "Pengerjaan waterproofing area basah kamar mandi sebelum pemasangan keramik.",
+            image: "/images/project_toilet_1763584972257.png",
+        },
+        {
+            title: "Waterproofing Tangki Air Beton",
+            description: "Pelapisan tangki air beton industrial untuk mencegah kebocoran dan kontaminasi.",
+            image: "/images/project_tank_1763584980831.png",
+        },
+        {
+            title: "Injeksi Beton Retak",
+            description: "Perbaikan struktur beton yang retak dengan metode injeksi untuk menghentikan kebocoran aktif.",
+            image: "/images/project_injection_1763584987681.png",
+        },
+        {
+            title: "Protective Coating Gedung",
+            description: "Aplikasi lapisan pelindung pada eksterior gedung untuk ketahanan terhadap cuaca ekstrem.",
+            image: "/images/project_coating_1763584995338.png",
+        },
     ];
 
     return (
