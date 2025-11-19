@@ -19,4 +19,5 @@ if (!envUrl || !envKey || !isValidUrl(envUrl)) {
     console.warn('Missing or invalid Supabase environment variables');
 }
 
+export const isConfigured = !!(envUrl && envKey && isValidUrl(envUrl));
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);

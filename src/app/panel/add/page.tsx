@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { useState, useEffect } from 'react';
+import { supabase, isConfigured } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -13,6 +13,12 @@ export default function AddProject() {
     const [loading, setLoading] = useState(false);
     const [dragActive, setDragActive] = useState(false);
     const router = useRouter();
+
+    useEffect(() => {
+        if (!isConfigured) {
+            alert('Supabase is not configured. Please check your .env.local file.');
+        }
+    }, []);
 
     const handleDrag = (e: React.DragEvent) => {
         e.preventDefault();
@@ -46,6 +52,10 @@ export default function AddProject() {
     };
 
     const uploadImage = async (file: File) => {
+        if (!isConfigured) {
+            throw new Error('Supabase is not configured. Check environment variables.');
+        }
+
         const fileExt = file.name.split('.').pop();
         const fileName = `${Date.now()}.${fileExt}`;
         const filePath = `${fileName}`;
@@ -64,6 +74,10 @@ export default function AddProject() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!isConfigured) {
+            alert('Supabase is not configured. Please check your .env.local file.');
+            return;
+        }
         if (!file) {
             alert('Please select an image');
             return;
@@ -92,6 +106,12 @@ export default function AddProject() {
     return (
         <div className="min-h-screen bg-gray-50 p-8">
             <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+                {!isConfigured && (
+                    <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+                        <p className="font-bold">Configuration Error</p>
+                        <p>Supabase environment variables are missing or invalid. Please update <code>.env.local</code> and restart the server.</p>
+                    </div>
+                )}
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold text-gray-900">Add New Project</h1>
                     <Link href="/panel" className="text-gray-600 hover:text-gray-900">
