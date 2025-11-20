@@ -17,22 +17,6 @@ export default function AddProject() {
     useEffect(() => {
         if (!isConfigured) {
             alert('Supabase is not configured. Please check your .env.local file.');
-        } else {
-            // Diagnostic: Check if bucket exists and connection works
-            const checkConnection = async () => {
-                const { data, error } = await supabase.storage.listBuckets();
-                if (error) {
-                    console.error('Supabase Connection Error:', error);
-                    alert(`Connection Error: ${error.message}. Check console for details.`);
-                } else {
-                    console.log('Available Buckets:', data);
-                    const bucketExists = data?.find(b => b.name === 'projects');
-                    if (!bucketExists) {
-                        alert('CRITICAL: "projects" bucket not found! Please create a public bucket named "projects" in your Supabase dashboard.');
-                    }
-                }
-            };
-            checkConnection();
         }
     }, []);
 
