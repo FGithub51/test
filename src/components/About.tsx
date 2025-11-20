@@ -20,10 +20,10 @@ export default function About() {
                     {/* Text Side */}
                     <div className="w-full lg:w-1/2">
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">
-                            About WaterProof Pro
+                            About USA Waterproofing
                         </h2>
                         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                            With over 10 years of experience, WaterProof Pro is your trusted partner for all waterproofing needs. We specialize in delivering high-quality, long-lasting solutions for residential and commercial properties.
+                            With over 10 years of experience, USA Waterproofing is your trusted partner for all waterproofing needs. We specialize in delivering high-quality, long-lasting solutions for residential and commercial properties.
                         </p>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             Our team of certified experts uses the latest technology and premium materials to ensure your property stays dry and secure. From roof leaks to basement dampness, we have the expertise to fix it all.

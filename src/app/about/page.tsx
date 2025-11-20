@@ -25,10 +25,10 @@ export default function AboutPage() {
                     {/* Text Side */}
                     <div className="w-full lg:w-1/2">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                            WaterProof Pro: Mitra Terpercaya Anda
+                            USA Waterproofing: Mitra Terpercaya Anda
                         </h2>
                         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                            Dengan pengalaman lebih dari 10 tahun, WaterProof Pro adalah mitra terpercaya Anda untuk semua kebutuhan waterproofing. Kami mengkhususkan diri dalam memberikan solusi berkualitas tinggi dan tahan lama untuk properti residensial dan komersial.
+                            Dengan pengalaman lebih dari 10 tahun, USA Waterproofing adalah mitra terpercaya Anda untuk semua kebutuhan waterproofing. Kami mengkhususkan diri dalam memberikan solusi berkualitas tinggi dan tahan lama untuk properti residensial dan komersial.
                         </p>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             Tim ahli bersertifikat kami menggunakan teknologi terbaru dan bahan premium untuk memastikan properti Anda tetap kering dan aman. Dari kebocoran atap hingga kelembapan basement, kami memiliki keahlian untuk memperbaiki semuanya.
